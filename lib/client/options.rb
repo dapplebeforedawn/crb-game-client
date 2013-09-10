@@ -7,9 +7,9 @@ module Options
     OptionParser.new do |opts|
       opts.on("-d", "--debug")                     { options.debug = true            }
       opts.on("-c", "--client_port=val", Integer)  { |arg| options.client_port = arg }
-      opts.on("-h", "--server_ip=val",   String)   { |arg| options.server_ip   = arg }
+      opts.on("-i", "--server_ip=val",   String)   { |arg| options.server_ip   = arg }
       opts.on("-p", "--server_port=val", Integer)  { |arg| options.server_port = arg }
-      opts.on("-h", "--help")                      { exec "less #{__FILE__}"         }
+      opts.on("-h", "--help")                      { exec "more #{__FILE__}"         }
     end.parse!
     options
   end
