@@ -3,13 +3,13 @@ require 'curses'
 #include Debug
 
 class Render
-  DAMAGE_COLOR  = 100
-  SCORE_COLOR   = 200
   Curses.init_screen
-  Curses.init_pair DAMAGE_COLOR, Curses::COLOR_WHITE, Curses::COLOR_RED
-  Curses.init_pair SCORE_COLOR,  Curses::COLOR_WHITE, Curses::COLOR_BLUE
   Curses.start_color
   Curses.noecho
+  DAMAGE_COLOR  = 100
+  SCORE_COLOR   = 200
+  Curses.init_pair DAMAGE_COLOR, Curses::COLOR_WHITE, Curses::COLOR_RED
+  Curses.init_pair SCORE_COLOR,  Curses::COLOR_WHITE, Curses::COLOR_BLUE
   at_exit { Curses.close_screen }
 
   def initialize(win, log, new_state, old_state, ident)
